@@ -11,7 +11,7 @@ def create_user(username, password):
     new_user = User(username, password)
     return new_user
 
-def display_user(user):
+def display_user():
     '''
     Function that displays all users
     '''
@@ -25,9 +25,9 @@ def save_user(user):
 
     user.save_user()
 
-def delete_user(user):
+def del_user(user):
     '''
-    Function for deleting a user
+    Function for deleting a user account
     '''
 
     user.delete_user()
@@ -72,4 +72,58 @@ def main():
                 create_password = input()
 
                 print("Confirm password")
-                confirm_password = input
+                confirm_password = input()
+
+            while create_password != confirm_password:
+                print("Password does not match!")
+                print("Retype your password")
+                create_password = input()
+                confirm_password = input()
+
+            else:
+                print(f"Welcome {created_username}. You have successfully created an account")
+                save_user(create_user(created_username, create_password))
+                print("\n")
+        
+        elif short_code == 'du':
+            if display_user():
+                print("This are all users")
+                print("\n")
+
+                for user in display_user():
+                    print(f"{user.username}")
+                    print("\n")
+
+            else:
+                print("\/n")
+                print("You do not have any users saved yet.")
+                print("\n")
+
+        elif short_code == 'fu':
+            print("Enter the username you want to find")
+            search_user = input()
+
+            if existing_users(search_user):
+                searched_user = find_user(search_user)
+                print(f"{searched_user.username}")
+                print('-' * 20)
+            else:
+                print("This user does not exist!")
+
+        elif short_code == 'dl':
+            print("Enter 'yes' to delete this account")
+            yes = input()
+            if yes == 'yes':
+                del_user()
+                print("Account deleted!")
+            else:
+                print("Couldn't find this account")
+
+        elif short_code == 'ex':
+            break
+        else:
+            print("Enter a valid code!")
+
+if __name__ == '__main__':
+    main()
+            

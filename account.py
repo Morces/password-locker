@@ -55,7 +55,7 @@ class User:
         '''
         This method checks if a given user exists
         '''
-        for user in cls.user_exist:
+        for user in cls.user_list:
             if user.username == username:
                 return user
 
