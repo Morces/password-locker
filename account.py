@@ -32,8 +32,35 @@ class User:
     def display_user(cls):
 
         '''
-        This method takes in an application name and return a string that matches that name
+        This method displays all users
         '''
 
         return cls.user_list
+
+    
+    @classmethod
+    def find_username(cls, username):
+
+        '''
+        This method finds users using their usernames
+        '''
+
+        for user in cls.user_list:
+            if user.username == username:
+                return user
+        
+
+    @classmethod
+    def user_exist(cls, username):
+        '''
+        This method checks if a given user exists
+        '''
+        for user in cls.user_exist:
+            if user.username == username:
+                return user
+
+        
+
+    
+    
 
