@@ -1,4 +1,8 @@
+from requests import delete
+
+
 class User:
+
     '''
     Class which generates new user instances
     '''
@@ -18,4 +22,12 @@ class User:
 
         User.user_list.append(self)
 
-    
+    def delete_user(self):
+
+        '''
+        This method deletes an instance of a user in the user list
+        '''
+
+        User.user_list.remove(self)
+
+
