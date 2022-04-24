@@ -8,7 +8,7 @@ class User:
     '''
     user_list = []
 
-    # constructor for username and password
+    # constructor function for username and password
 
     def __init__(self, username, password):
         self.username = username
@@ -30,4 +30,13 @@ class User:
 
         User.user_list.remove(self)
 
+
+    @classmethod
+    def display_user(cls):
+
+        '''
+        This method takes in an application name and return a string that matches that name
+        '''
+
+        return cls.user_list
 
