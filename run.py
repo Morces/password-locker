@@ -48,4 +48,28 @@ def existing_users(username):
 
 
 def main():
-    print("")
+    print("Hello and Welcome to Password Locker. I hope you enjoy this application!")
+    print('\n')
+
+    while True:
+        print("Nagivate using short codes. To create a new user, use 'cu', To display users, use 'du', To find a user, use 'fu', To delete user use 'dl', To exit user use 'ex'")
+
+        short_code = input().lower()
+
+        if short_code == 'cu':
+            print("Create a username")
+            created_username = input()
+            print("Suggest password? Enter 'yes'")
+            yes = input()
+            if yes == "yes":
+                pass_word = string.ascii_letters
+                create_password = "".join(random.choice(pass_word) for i in range(10))
+                print("Password successfully generated!")
+                continue
+
+            else:
+                print("Create password")
+                create_password = input()
+
+                print("Confirm password")
+                confirm_password = input
