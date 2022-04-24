@@ -11,6 +11,13 @@ def create_user(username, password):
     new_user = User(username, password)
     return new_user
 
+def display_user(user):
+    '''
+    Function that displays all users
+    '''
+
+    return User.display_user()
+
 def save_user(user):
     '''
     Function for saving a new user
@@ -29,3 +36,16 @@ def find_user(username):
     '''
     Function for finding a user
     '''
+
+    return User.find_username(username)
+
+def existing_users(username):
+    '''
+    Checks for existing users
+    '''
+
+    return User.user_exist(username)
+
+
+def main():
+    print("")
